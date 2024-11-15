@@ -1,9 +1,10 @@
+/* eslint-disable react/display-name */
+import { forwardRef } from "react";
 import Image from "next/image";
 
-
-const Card = ({ id, frontSrc, frontAlt, backText }) => {
+const Card = forwardRef(({ id, frontSrc, frontAlt, backText }, ref) => {
     return (
-        <div className="card" id={id}>
+        <div className="card" id={id} ref={ref}>
             <div className="card-wrapper">
                 <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -22,6 +23,6 @@ const Card = ({ id, frontSrc, frontAlt, backText }) => {
             </div>
         </div>
     )
-}
+});
 
 export default Card;
